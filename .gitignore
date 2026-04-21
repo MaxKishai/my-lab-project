@@ -1,3 +1,12 @@
 .obj
 *.exe
 .vs/
+node_modules/
+dist/
+.env
+coverage/
+playwright-report/
+test-results/
+unit/
+*.log
+.eslintcache

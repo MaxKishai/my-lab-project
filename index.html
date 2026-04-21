@@ -1,2 +1,35 @@
-<p>Test</p>
-<p>Ще одна фіча для графіка</p>
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>UniDone - Lab 3</title>
+    <style>
+        body { font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; background: #f0f2f5; margin: 0; }
+        .card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); text-align: center; }
+        .status { margin-top: 15px; padding: 10px; border-radius: 8px; font-weight: bold; }
+        .dev { background: #fff3cd; color: #856404; }
+        .prod { background: #d4edda; color: #155724; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>UniDone</h1>
+        <p>Менеджер дедлайнів</p>
+        <div id="badge" class="status">
+            Статус: <span id="val">Завантаження...</span>
+        </div>
+    </div>
+
+    <script type="module">
+        // Отримуємо змінну з Vite
+        const mode = import.meta.env.VITE_APP_STATUS || 'Development';
+        document.getElementById('val').innerText = mode;
+        
+        if (mode === 'Production Mode') {
+            document.getElementById('badge').classList.add('prod');
+        } else {
+            document.getElementById('badge').classList.add('dev');
+        }
+    </script>
+</body>
+</html>
