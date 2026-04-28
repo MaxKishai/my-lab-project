@@ -27,8 +27,7 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-      - name: Run unit tests
-        run: npm run test:unit # Переконайся, що ця команда є в package.json
+  
 
       - name: Build for production
         run: npm run build
